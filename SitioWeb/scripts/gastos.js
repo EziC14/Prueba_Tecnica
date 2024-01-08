@@ -1,5 +1,30 @@
+const idUsuario = localStorage.getItem('id');
+
+const input = document.getElementById('fotoComprobante');
+let urlImagenCadena = ''; 
+
+input.addEventListener('change', function() {
+    const archivoSeleccionado = input.files[0];
+
+    if (archivoSeleccionado) {
+        const lector = new FileReader();
+
+        lector.onload = function(evento) {
+            const urlImagen = evento.target.result;
+
+            urlImagenCadena = urlImagen;
+
+            const img = document.createElement('img');
+            img.src = urlImagen;
+            document.body.appendChild(img);
+        };
+
+        lector.readAsDataURL(archivoSeleccionado);
+    }
+});
+
 function misGastos() {
-    const id = 1;
+    const id = idUsuario;
     try {
         fetch(`http://localhost:3000/verGastos/${id}`, {
             method: 'GET',
@@ -14,15 +39,16 @@ function misGastos() {
         console.error(error)
     }
 }
+
 function mostrarImagenEnOtraPestana(urlImagen) {
     const nuevaPestana = window.open();
     nuevaPestana.document.body.innerHTML = `<img src="${urlImagen}" alt="Comprobante">`;
 }
+
 function cargarGastos(data) {
     const tabla = document.createElement('table');
     tabla.className = "tabla-gastos";
 
-    // Crear encabezados de la tabla
     const encabezados = ['RUC','Categoría', 'Fecha', 'Monto', 'Comprobante', 'Acciones'];
     const encabezadosRow = document.createElement('tr');
 
@@ -34,7 +60,6 @@ function cargarGastos(data) {
 
     tabla.appendChild(encabezadosRow);
 
-    // Agregar datos a la tabla
     data.forEach(item => {
         const fila = document.createElement('tr');
         
@@ -87,7 +112,7 @@ function validarFormulario() {
     const monto = document.getElementById('monto').value;
     const categoria = document.getElementById('categoria').value;
     const ruc = document.getElementById('ruc').value;
-    const fotoComprobante = "../img/COMPROBANTE.jpg";
+    const fotoComprobante = document.getElementById('fotoComprobante').value;
     const fecha = document.getElementById('fecha').value;
 
     if (monto === '' || categoria === '' || ruc === '' || fotoComprobante === '' || fecha === '') {
@@ -101,10 +126,8 @@ function crear() {
     const monto = document.getElementById('monto').value;
     const categoria = document.getElementById('categoria').value;
     const ruc = document.getElementById('ruc').value;
-    const fotoComprobante = "../img/COMPROBANTE.jpg";
     const fecha = document.getElementById('fecha').value;
-    const id = 1;
-
+    const id = idUsuario;
     if (validarFormulario()) {
         try {
             fetch(`http://localhost:3000/gastos/create/${id}`, {
@@ -117,11 +140,11 @@ function crear() {
                     monto: monto,
                     categoria: categoria,
                     ruc: ruc,
-                    foto: fotoComprobante,
+                    foto: urlImagenCadena,
                     fecha: fecha
                 })
             })
-            .then(alert("Usuario creado"))
+            .then(alert("Registro de Gasto fue Creado"))
             .catch(error => { throw new Error("Error en la solicitud: " + error) })
     } catch (error) {
         console.error(error)
@@ -130,3 +153,6 @@ function crear() {
         alert('Por favor, complete todos los campos.');
     }
 }
+
+
+

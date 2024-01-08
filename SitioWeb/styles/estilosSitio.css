@@ -151,7 +151,7 @@ h1{
     gap: 20px;
     justify-content: space-around;
 }
-/* Estilos para la tabla de gastos */
+
 .tabla-gastos {
     width: 100%;
     border-collapse: collapse;
@@ -163,13 +163,13 @@ h1{
     color: #FFF;
     padding: 15px;
     text-align: left;
-    border-bottom: 1px solid #ddd; /* Solo líneas horizontales */
+    border-bottom: 1px solid #ddd; 
 }
 
 .tabla-gastos th {
     background-color: #4CAF50;
     font-weight: bold;
-    color: white; /* Agregar color de texto para encabezados */
+    color: white; 
 }
 
 .tabla-gastos td img {
@@ -180,7 +180,7 @@ h1{
 }
 
 .tabla-gastos tr:hover {
-    background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente */
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .boton-ver {
@@ -200,7 +200,7 @@ h1{
 
 .tabla-gastos th:nth-child(5),
 .tabla-gastos th:nth-child(6)  {
-    text-align: center; /* Alinea el texto al centro */
+    text-align: center; 
 }
 
 .tabla-gastos td:nth-child(6) button {
@@ -208,7 +208,7 @@ h1{
     margin: 0 auto;
 }
 
-/* Estilos para el formulario */
+
 #registroGastosForm {
     max-width: 400px;
     margin: 0 auto;

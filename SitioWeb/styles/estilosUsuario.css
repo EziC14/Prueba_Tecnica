@@ -190,9 +190,9 @@ input{
 }
 .btn_sub:hover {
     opacity: 1; 
-    background: linear-gradient(90deg, rgba(70, 49, 94, 0.13) 1.96%, #a691d8 103.04%); /* Cambia el fondo en hover */
-    -webkit-text-fill-color: #FFF; /* Cambia el color del texto en hover */
-    border-color: linear-gradient(90deg, rgba(70, 49, 94, 0.13) 1.96%, #a691d8 103.04%); /* Cambia el color del borde en hover */
+    background: linear-gradient(90deg, rgba(70, 49, 94, 0.13) 1.96%, #a691d8 103.04%); 
+    -webkit-text-fill-color: #FFF; 
+    border-color: linear-gradient(90deg, rgba(70, 49, 94, 0.13) 1.96%, #a691d8 103.04%); 
 }
 
 .change{
@@ -217,7 +217,7 @@ a:hover {
 #txtEmail:focus,
 #txtPass:focus {
     font-weight: bold;
-    font-size: 16px; /* Cambia el tamaño de la letra al enfocar el campo */
+    font-size: 16px; 
 }
 
 .divsd{
