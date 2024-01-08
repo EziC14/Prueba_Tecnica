@@ -120,6 +120,25 @@ h1{
     z-index: -1;
 }
 
+@media(min-width: 768px) {
+    .circulo_mediano{
+        left: 800px;
+    }
+}
+@media(min-width: 992px) {
+    .circulo_grande-2{
+        left: 650px;
+    }
+}
+@media(min-width: 1600px) {
+    .circulo_grande-2{
+        left: 1200px;
+    }
+    .circulo_mediano{
+        left: 1400px;
+}
+}
+
 .header {
     display: flex;
     justify-content: space-between;

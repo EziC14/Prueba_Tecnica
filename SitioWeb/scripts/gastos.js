@@ -1,27 +1,40 @@
 const idUsuario = localStorage.getItem('id');
 
 const input = document.getElementById('fotoComprobante');
-let urlImagenCadena = ''; 
+let urlImagenCadena = '';
 
-input.addEventListener('change', function() {
+input.addEventListener('change', handleFileChange); 
+
+function handleFileChange() {
     const archivoSeleccionado = input.files[0];
 
-    if (archivoSeleccionado) {
-        const lector = new FileReader();
-
-        lector.onload = function(evento) {
-            const urlImagen = evento.target.result;
-
-            urlImagenCadena = urlImagen;
-
-            const img = document.createElement('img');
-            img.src = urlImagen;
-            document.body.appendChild(img);
-        };
-
-        lector.readAsDataURL(archivoSeleccionado);
+    if (archivoSeleccionado && esImagen(archivoSeleccionado)) {
+        mostrarImagen(archivoSeleccionado);
+    } else {
+        console.error('Por favor, selecciona un archivo de imagen válido.');
     }
-});
+}
+
+function esImagen(archivo) {
+    return archivo.type.startsWith('image');
+}
+
+function mostrarImagen(archivo) {
+    const lector = new FileReader();
+
+    lector.onload = function(evento) {
+        const urlImagen = evento.target.result;
+
+        urlImagenCadena = urlImagen;
+        console.log(urlImagen)
+    };
+
+    lector.onerror = function(error) {
+        console.error('Error al cargar la imagen:', error);
+    };
+
+    lector.readAsDataURL(archivo);
+}
 
 function misGastos() {
     const id = idUsuario;
@@ -82,7 +95,7 @@ function cargarGastos(data) {
 
         const imagenCell = document.createElement('td');
         const imagen = document.createElement('img');
-        imagen.src = item.fotoComprobante;
+        imagen.src = item.fotoComprobanteCadena;
         imagen.alt = "Comprobante";
         imagenCell.appendChild(imagen);
         fila.appendChild(imagenCell);
@@ -92,7 +105,7 @@ function cargarGastos(data) {
         verBtn.textContent = 'Ver';
         verBtn.className = 'boton-ver'; 
         verBtn.onclick = function() {
-            mostrarImagenEnOtraPestana(item.fotoComprobante);
+            mostrarImagenEnOtraPestana(item.fotoComprobanteCadena);
         };
         verBtnCell.appendChild(verBtn);
         fila.appendChild(verBtnCell);
