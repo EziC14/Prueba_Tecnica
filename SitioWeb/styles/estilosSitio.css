@@ -1,0 +1,264 @@
+@font-face {
+    font-family: 'Mons';
+    src: url('/SitioWeb/Fonts/Montserrat-Regular.otf') ;
+  }
+
+*{
+    font-family: Mons;
+  }
+  
+.div-page-r {
+    background-color: #1B0926;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.div-page {
+    background-color: #1B0926;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+h1{
+    color: #FFF;
+}
+.circulo_grande {
+    top: -35px;
+    left: -145px;
+    border-radius: 291.304px;
+    opacity: 0.9;
+    background: var(--Linear, linear-gradient(180deg, #FC00FF 0%, #00DBDE 100%));
+    width: 291.304px;
+    height: 289.585px;
+    position: absolute;
+    transform: rotate(19.315deg);
+    flex-shrink: 0;
+    z-index: -1;
+}
+
+.circulo_mediano {
+    top: 200px;
+    right: -110px;
+    border-radius: 291.304px;
+    opacity: 0.8;
+    background: radial-gradient(50% 50% at 50% 50%, #26CDFD 0%, #B721FF 100%);
+    width: 178px;
+    height: 178px;
+    position: absolute;
+    flex-shrink: 0;
+    z-index: -1;
+}
+
+.circulo_pequeño {
+    top: -25px;
+    right: 20px;
+    border-radius: 291.304px;
+    opacity: 0.6;
+    background: var(--3, linear-gradient(180deg, #FFCC70 0%, #C850C0 100%));
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    transform: rotate(101.179deg);
+    flex-shrink: 0;
+    z-index: -1;
+}
+
+.circulo_grande-1 {
+    top: 535px;
+    left: 145px;
+    border-radius: 291.304px;
+    opacity: 0.9;
+    background: var(--Linear, linear-gradient(180deg, #FC00FF 0%, #00DBDE 100%));
+    width: 291.304px;
+    height: 289.585px;
+    position: absolute;
+    transform: rotate(19.315deg);
+    flex-shrink: 0;
+    z-index: -1;
+}
+
+.circulo_mediano-1 {
+    top: 200px;
+    right: 1110px;
+    border-radius: 291.304px;
+    opacity: 0.8;
+    background: radial-gradient(50% 50% at 50% 50%, #58dd37 0%, #B721FF 100%);
+    width: 178px;
+    height: 178px;
+    position: absolute;
+    flex-shrink: 0;
+    z-index: -1;
+}
+
+.circulo_pequeño-1 {
+    top: 425px;
+    right: 220px;
+    border-radius: 291.304px;
+    opacity: 0.6;
+    background: var(--3, linear-gradient(180deg, #FFCC70 0%, #C850C0 100%));
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    transform: rotate(101.179deg);
+    flex-shrink: 0;
+    z-index: -1;
+}
+.circulo_grande-2 {
+    top: 630px;
+    left: 1000px;
+    border-radius: 291.304px;
+    opacity: 0.9;
+    background: var(--Linear, linear-gradient(180deg, #FC00FF 0%, #00DBDE 100%));
+    width: 291.304px;
+    height: 289.585px;
+    position: absolute;
+    transform: rotate(19.315deg);
+    flex-shrink: 0;
+    z-index: -1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 80px;
+}
+
+.header button {
+    background-color: transparent;
+    border: 1px solid #4CAF50; 
+    color: #4CAF50; 
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 15px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.header button:hover {
+    background-color: #4CAF50;
+    color: #FFF; 
+    text-decoration: underline; 
+}
+
+#div-gastos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+/* Estilos para la tabla de gastos */
+.tabla-gastos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 80px;
+}
+
+.tabla-gastos th,
+.tabla-gastos td {
+    color: #FFF;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Solo líneas horizontales */
+}
+
+.tabla-gastos th {
+    background-color: #4CAF50;
+    font-weight: bold;
+    color: white; /* Agregar color de texto para encabezados */
+}
+
+.tabla-gastos td img {
+    max-width: 150px;
+    max-height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+.tabla-gastos tr:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente */
+}
+
+.boton-ver {
+    width: 100px;
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton-ver:hover {
+    background-color: #45a049;
+}
+
+.tabla-gastos th:nth-child(5),
+.tabla-gastos th:nth-child(6)  {
+    text-align: center; /* Alinea el texto al centro */
+}
+
+.tabla-gastos td:nth-child(6) button {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilos para el formulario */
+#registroGastosForm {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 25px;
+    backdrop-filter: blur(17px);
+    border: 1.3px solid #FFF; 
+    margin-top: 50px;
+}
+
+#registroGastosForm label {
+    color: #FFF;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    font-size: 18px;
+}
+
+#registroGastosForm input[type="number"],
+#registroGastosForm input[type="date"],
+#registroGastosForm select {
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    
+}
+
+#registroGastosForm button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#registroGastosForm button:hover {
+    background-color: #45a049;
+}
+
+#registroGastosForm input[type="file"] {
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Sistema de Control de Gastos</title>
+    <link rel="stylesheet" type="text/css" href="../styles/estilosSitio.css">
+</head>
+
+<body class="div-page-r">
+    <div class="circulo_grande-2"></div>
+    <div class="circulo_grande"></div>
+    <div class="circulo_mediano"></div>
+    <div class="circulo_pequeño"></div>
+    <div class="circulo_grande-1"></div>
+    <div class="circulo_mediano-1"></div>
+    <div class="circulo_pequeño-1"></div>
+    <div class="header">
+        <h1>REGISTRO DE GASTOS</h1>
+        <div>
+            <button onclick="redirigir()">Visualizar Gastos</button>
+            <button onclick="window.location.href = 'login.html'">Cerrar Sesion</button>
+        </div>
+    </div>
+
+    <form id="registroGastosForm">
+        <label for="monto">Monto:</label>
+        <input type="number" id="monto" name="monto"><br><br>
+    
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="categoria">
+            <option value="Alimentación">Alimentación</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Alojamiento">Alojamiento</option>
+            <option value="Otros">Otros</option>
+        </select><br><br>
+    
+        <label for="ruc">RUC del comercio:</label>
+        <input type="number" id="ruc" name="ruc"><br><br>
+    
+        <label for="fotoComprobante">Adjuntar foto del comprobante:</label>
+        <input type="file" id="fotoComprobante" name="fotoComprobante" accept="image/*"><br><br>
+   
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha"><br><br>
+        
+        <button onclick="crear()" type="submit">Registrar Gasto</button>
+
+    </form>
+    </div>
+    <script src="../scripts/gastos.js"></script>
+</body>
+
+</html>
